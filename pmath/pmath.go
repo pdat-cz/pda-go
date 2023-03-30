@@ -1,4 +1,4 @@
-package main
+package pmath
 
 // BoolToInt Convert bool to int
 func BoolToInt(b bool) int {

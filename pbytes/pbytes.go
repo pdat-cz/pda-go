@@ -1,4 +1,4 @@
-package main
+package pbytes
 
 import (
 	"encoding/binary"
