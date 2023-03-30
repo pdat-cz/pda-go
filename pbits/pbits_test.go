@@ -1,4 +1,4 @@
-package pbits
+package main
 
 import (
 	"testing"

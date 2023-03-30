@@ -1,12 +1,8 @@
-package pbits
+package main
 
 import (
 	"fmt"
 )
-
-func Version() string {
-	return "0.1"
-}
 
 // ByteFromInt Int to byte
 func ByteFromInt(i int) byte {

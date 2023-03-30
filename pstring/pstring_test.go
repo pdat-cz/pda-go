@@ -1,4 +1,4 @@
-package pstring
+package main
 
 import (
 	"strings"

@@ -1,14 +1,10 @@
-package pstring
+package main
 
 import (
 	"encoding/hex"
 	"errors"
 	"strings"
 )
-
-func Version() string {
-	return "0.0.1"
-}
 
 // HexStringToByte Convert HEX string to byte
 func HexStringToByte(s string) (byte, error) {

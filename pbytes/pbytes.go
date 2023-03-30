@@ -1,14 +1,10 @@
-package pbytes
+package main
 
 import (
 	"encoding/binary"
 	"fmt"
 	"math"
 )
-
-func Version() string {
-	return "0.1"
-}
 
 // BytesToHexString ByteTo8Bits Convert byte to 8 bits
 func BytesToHexString(b []byte) string {

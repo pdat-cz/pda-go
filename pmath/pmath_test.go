@@ -1,4 +1,4 @@
-package pmath
+package main
 
 import "testing"
 

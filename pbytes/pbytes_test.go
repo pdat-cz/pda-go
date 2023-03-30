@@ -1,4 +1,4 @@
-package pbytes
+package main
 
 import (
 	"bytes"
