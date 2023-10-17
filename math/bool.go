@@ -1,6 +1,5 @@
-package pmath
+package math
 
-// BoolToInt Convert bool to int
 func BoolToInt(b bool) int {
 	if b {
 		return 1
