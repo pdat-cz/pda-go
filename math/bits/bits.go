@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	math2 "github.com/pdat-cz/pda-go/pkg/math"
+	math2 "github.com/pdat-cz/pda-go/math"
 	"math"
 	"strings"
 )
@@ -175,6 +175,9 @@ func ReversedBytes(s []byte) []byte {
 }
 
 func Bytes8ToInt(b []byte) uint16 {
+	if len(b) == 1 {
+		b = []byte{b[0], 0x00}
+	}
 	return binary.LittleEndian.Uint16(b)
 }
 

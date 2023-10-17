@@ -505,3 +505,50 @@ func TestBytesAreEqual(t *testing.T) {
 		}
 	}
 }
+
+func TestHexStringToByte(t *testing.T) {
+	check := []struct {
+		input string
+		want  byte
+		err   error
+	}{
+		{"0x00", byte(0x00), nil},
+		{"0x01", byte(0x01), nil},
+	}
+
+	for _, c := range check {
+		received, err := HexStringToByte(c.input)
+		if err != nil {
+			if err.Error() != c.err.Error() {
+				t.Errorf("HexStringToByte('%s') -> error received: %s != error expected: %s", c.input, err, c.err)
+			}
+		} else {
+			if received != c.want {
+				t.Errorf("HexStringToByte('%s') -> %d != %d", c.input, c.want, received)
+			}
+		}
+	}
+}
+
+func TestHexStringToBytes(t *testing.T) {
+	check := []struct {
+		input string
+		want  []byte
+	}{
+		{"0x00", []byte{0x00}},
+		{"0x01", []byte{0x01}},
+		{"0x01 0xFF", []byte{0x01, 0xFF}},
+	}
+
+	for _, c := range check {
+		received := HexStringToBytes(c.input)
+		if len(received) != len(c.want) {
+			t.Errorf("HexStringToBytes('%s') -> %d != %d", c.input, c.want, received)
+		}
+		for i, v := range received {
+			if v != c.want[i] {
+				t.Errorf("HexStringToBytes('%s') -> %d != %d", c.input, c.want, received)
+			}
+		}
+	}
+}
